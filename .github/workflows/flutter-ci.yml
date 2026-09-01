@@ -1,0 +1,38 @@
+name: Flutter CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  analyze-and-test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Instalar dependências
+        run: flutter pub get
+
+      # firebase_options.dart não é versionado; o CI usa um stub para compilar.
+      - name: Gerar stub de configuração do Firebase
+        run: cp lib/firebase_options.example.dart lib/firebase_options.dart
+
+      - name: Verificar formatação
+        run: dart format --output=none --set-exit-if-changed .
+
+      - name: Analisar
+        run: flutter analyze
+
+      - name: Testar
+        run: flutter test
