@@ -53,9 +53,3 @@ Escopos usuais: `agenda`, `pacientes`, `particulares`, `integracao`, `auth`, `ci
 - Organização por feature: `lib/features/<modulo>/{data,domain,presentation}`.
 - Nada de credencial, chave ou dado real de paciente no repositório. Nunca. Isso vale
   também para prints em issues e para o material da apresentação.
-
-## Documentação
-
-A documentação vive em `docs/` e é versionada junto com o código — ela não é uma tarefa
-da última semana. Toda decisão técnica relevante vira um ADR em `docs/adr/`, e toda
-reunião com a Rokuzen vira uma ata em `docs/atas/` no mesmo dia.

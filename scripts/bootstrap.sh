@@ -11,7 +11,7 @@ fi
 echo "==> Criando o projeto Flutter em app/"
 flutter create \
   --org br.edu.maua.rokuzen \
-  --project-name rokuzen_terapeuta \
+  --project-name rokuzen_mobile \
   --platforms=ios,android \
   app
 

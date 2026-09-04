@@ -1,4 +1,4 @@
-# Rokuzen — App Mobile do Terapeuta
+# Rokuzen Mobile
 
 Projeto Integrador Interdisciplinar · TTI206 · 2026-2 · Instituto Mauá de Tecnologia
 Parceiro: **Rokuzen — Clínica de Terapia**
@@ -16,6 +16,8 @@ da sua rotina de atendimentos.
 | 3 | Atendimentos Particulares | Terapeuta sinaliza e gerencia seus horários próprios |
 | 4 | Integração | Sincronização com o sistema interno da secretaria |
 
+O escopo detalhado será fechado nas reuniões com o parceiro.
+
 ## Stack
 
 | Camada | Tecnologia | Por quê |
@@ -26,12 +28,18 @@ da sua rotina de atendimentos.
 | Back-end | Cloud Functions (Python) | Apenas para regras que não podem viver no cliente |
 | CI | GitHub Actions | `flutter analyze` + `flutter test` em todo PR |
 
-As decisões técnicas e suas justificativas estão em [`docs/adr/`](docs/adr/).
-
 ## Como rodar
 
 Pré-requisitos: Flutter estável (`flutter --version`), Node 20+ (Firebase CLI), conta no
 Firebase com acesso ao projeto.
+
+O projeto Flutter ainda não existe no repositório. Para criá-lo, uma única vez:
+
+```bash
+./scripts/bootstrap.sh
+```
+
+Depois disso, no dia a dia:
 
 ```bash
 cd app
@@ -52,10 +60,7 @@ flutter run --dart-define=USE_EMULATOR=true
 ```
 app/          aplicativo Flutter (código do produto)
 functions/    Cloud Functions em Python (back-end)
-docs/         documentação de software entregue à disciplina
-  adr/        decisões de arquitetura, uma por arquivo
-  atas/       atas das reuniões com o parceiro
-scripts/      utilitários de setup e seed
+scripts/      utilitários de setup
 .github/      templates de issue/PR e workflows de CI
 ```
 
@@ -69,7 +74,7 @@ revisão de outro integrante.
 
 | Nome | GitHub | Papel |
 |------|--------|-------|
-| Guilherme Tomaz | @ | Tech lead |
+| Guilherme Tomaz Gomes | @guit953 | |
 | | | |
 | | | |
 | | | |
